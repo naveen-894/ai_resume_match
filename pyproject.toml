@@ -1,0 +1,29 @@
+[project]
+name = "ai-resume-mather"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "alembic>=1.17.1",
+    "asyncpg>=0.30.0",
+    "email-validator>=2.3.0",
+    "fastapi>=0.120.2",
+    "langchain>=1.0.3",
+    "langchain-openai>=1.0.1",
+    "langgraph>=1.0.2",
+    "langgraph-checkpoint-postgres>=3.0.0",
+    "langgraph-checkpoint-sqlite>=3.0.0",
+    "passlib[bcrypt]>=1.7.4",
+    "psycopg2-binary>=2.9.11",
+    "psycopg[binary]>=3.2.12",
+    "pypdf2>=3.0.1",
+    "python-dotenv>=1.2.1",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.20",
+    "slowapi>=0.1.9",
+    "sqlalchemy>=2.0.44",
+    "textract>=1.6.5",
+    "uvicorn>=0.38.0",
+]
