@@ -8,6 +8,7 @@ dependencies = [
     "aiosqlite>=0.21.0",
     "alembic>=1.17.1",
     "asyncpg>=0.30.0",
+    "boto3>=1.43.103",
     "email-validator>=2.3.0",
     "fastapi>=0.120.2",
     "langchain>=1.0.3",
@@ -27,3 +28,7 @@ dependencies = [
     "textract>=1.6.5",
     "uvicorn>=0.38.0",
 ]
+
+[tool.uv]
+# textract pins six==1.12.0, whose six.moves doesn't import on Python 3.12+ (needed by botocore)
+override-dependencies = ["six>=1.16"]

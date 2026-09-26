@@ -4,28 +4,29 @@
     "temperature": 0.0,
     "max_tokens": 5000
   },
-
   "jd_parser": {
     "model": "gpt-4o-mini",
     "temperature": 0.0,
     "max_tokens": 4000
   },
-
   "skill_matcher": {
     "model": "gpt-4o-mini",
     "temperature": 0.0,
     "max_tokens": 2000
   },
-
   "reasoning_chain": {
-    "model": "gpt-4o",
-    "temperature": 0.2,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
     "max_tokens": 6000
   },
-
   "chat_followup": {
     "model": "gpt-4o-mini",
-    "temperature": 0.3,
+    "temperature": 0.0,
     "max_tokens": 2000
+  },
+  "topic_guard": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "max_tokens": 50
   }
 }

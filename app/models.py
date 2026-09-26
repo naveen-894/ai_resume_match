@@ -1,6 +1,7 @@
 # models.py
 from app.util.db import Base
 from sqlalchemy import Column, Float, Integer, String, ForeignKey, Text, DateTime
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -30,6 +31,9 @@ class Conversation(Base):
     resume_file_url = Column(String, nullable=True)
 
     thread_id = Column(String, nullable=False)
+
+    # Final output of the match graph, keyed by node name (same shape as the streamed chunks)
+    match_result = Column(JSONB, nullable=True)
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
