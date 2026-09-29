@@ -20,9 +20,12 @@ class Conversation(Base):
 
     id = Column(Integer, primary_key=True, index=True)
 
-    # relation to user
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    # relation to user (nullable: anonymous/guest conversations have no user)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     user = relationship("User", back_populates="conversations")
+
+    # opaque client-generated id identifying an anonymous guest (mutually exclusive with user_id)
+    guest_id = Column(String, nullable=True, index=True)
 
     jd_text = Column(Text, nullable=True)
     resume_text = Column(Text, nullable=True)
