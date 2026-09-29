@@ -6,7 +6,7 @@ import uuid
 from app.models import Conversation, ConversationMessage, User
 from app.util.s3 import upload_to_s3
 from app.util.db import get_session
-from app.util.dependencies import get_current_user
+from app.util.dependencies import get_current_user_optional, get_guest_id
 from fastapi import APIRouter, Form, UploadFile, File, HTTPException, Depends, Body
 from fastapi.responses import StreamingResponse
 from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
@@ -28,19 +28,41 @@ CHECKPOINT_DB_URL = (
     f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
+
+def _owner_filter(current_user: User | None, guest_id: str | None):
+    """Filter identifying the caller's own conversations: by user_id when logged in,
+    by guest_id for anonymous requests. Raises 401 if neither identity is present."""
+    if current_user is not None:
+        return Conversation.user_id == current_user.id
+    if guest_id:
+        return Conversation.guest_id == guest_id
+    raise HTTPException(status_code=401, detail="Authentication or guest id required")
+
+
 @router.post("/match")
 async def match_resume(
     jd_text: str = Form(None),
     resume_text: str = Form(None),
     jd_file: UploadFile = File(None),
     resume_file: UploadFile = File(None),
-    current_user: str = Depends(get_current_user),
+    current_user: User | None = Depends(get_current_user_optional),
+    guest_id: str | None = Depends(get_guest_id),
     db: AsyncSession = Depends(get_session)
 ):
     MATCH_RUN_COST = float(os.getenv("MATCH_RUN_COST", 0.03))
-    # 🪙 Check if user has credits
-    if current_user.credits <= 0 or current_user.credits - MATCH_RUN_COST < 0:
-        raise HTTPException(status_code=402, detail="Insufficient credits")
+    if current_user is not None:
+        # 🪙 Check if user has credits
+        if current_user.credits <= 0 or current_user.credits - MATCH_RUN_COST < 0:
+            raise HTTPException(status_code=402, detail="Insufficient credits")
+    else:
+        # 👤 Anonymous: allow exactly one conversation per guest id, ever
+        if not guest_id:
+            raise HTTPException(status_code=400, detail="Missing guest identifier")
+        existing = await db.execute(
+            select(Conversation.id).where(Conversation.guest_id == guest_id).limit(1)
+        )
+        if existing.scalar_one_or_none() is not None:
+            raise HTTPException(status_code=403, detail="guest_limit_reached")
     # 🧾 Validate and extract text
     if jd_file:
         validate_file(jd_file, "jd")
@@ -59,7 +81,8 @@ async def match_resume(
         raise HTTPException(status_code=400, detail="Resume text or file is required")
     thread = str(uuid.uuid4())
     convo = Conversation(
-        user_id=current_user.id,
+        user_id=current_user.id if current_user else None,
+        guest_id=guest_id if current_user is None else None,
         thread_id=thread,
         jd_text=jd_text,
         resume_text=resume_text,
@@ -94,9 +117,10 @@ async def match_resume(
             yield f"data: {json.dumps({'status': 'error', 'error': 'Something went wrong while analysing the match. Please try again.'})}\n\n"
             return
         yield f"data: {json.dumps({'progress': 100, 'status': 'completed'})}\n\n"
-        # Only charge for runs that completed
+        # Only charge for runs that completed (guests have no credits to charge)
         convo.match_result = match_result
-        current_user.credits -= MATCH_RUN_COST
+        if current_user is not None:
+            current_user.credits -= MATCH_RUN_COST
         await db.commit()
     
     return StreamingResponse(event_stream(), media_type="text/event-stream")
@@ -122,12 +146,13 @@ def _sections_from_state(values: dict) -> dict:
 @router.get("/match/{thread_id}")
 async def get_match_result(
     thread_id: str,
-    current_user: User = Depends(get_current_user),
+    current_user: User | None = Depends(get_current_user_optional),
+    guest_id: str | None = Depends(get_guest_id),
     db: AsyncSession = Depends(get_session),
 ):
     res = await db.execute(select(Conversation).where(
         Conversation.thread_id == thread_id,
-        Conversation.user_id == current_user.id
+        _owner_filter(current_user, guest_id)
     ))
     convo = res.scalar_one_or_none()
     if not convo:
@@ -156,15 +181,17 @@ async def get_match_result(
 async def continue_chat(
     thread_id: str,
     question: str = Body(..., embed=True),
-    current_user: User = Depends(get_current_user),
+    current_user: User | None = Depends(get_current_user_optional),
+    guest_id: str | None = Depends(get_guest_id),
     db: AsyncSession = Depends(get_session),
 ):
     CHAT_MESSAGE_COST = float(os.getenv("CHAT_MESSAGE_COST", 0.002))
-    if current_user.credits <= 0 or current_user.credits - CHAT_MESSAGE_COST < 0:
-        raise HTTPException(status_code=402, detail="Insufficient credits")
+    if current_user is not None:
+        if current_user.credits <= 0 or current_user.credits - CHAT_MESSAGE_COST < 0:
+            raise HTTPException(status_code=402, detail="Insufficient credits")
     res = await db.execute(select(Conversation).where(
         Conversation.thread_id == thread_id,
-        Conversation.user_id == current_user.id
+        _owner_filter(current_user, guest_id)
     ))
     convo = res.scalar_one_or_none()
     if not convo:
@@ -182,7 +209,7 @@ async def continue_chat(
     ]
     db.add(ConversationMessage(
         thread_id=thread_id,
-        user_id=current_user.id,
+        user_id=current_user.id if current_user else None,
         role="user",
         message=question
     ))
@@ -227,11 +254,11 @@ async def continue_chat(
         # store the AI message; charge only for answered, in-scope questions
         db.add(ConversationMessage(
             thread_id=thread_id,
-            user_id=current_user.id,   # optional you can store None for ai
+            user_id=current_user.id if current_user else None,   # optional you can store None for ai
             role="assistant",
             message=answer
         ))
-        if not refused:
+        if not refused and current_user is not None:
             current_user.credits -= CHAT_MESSAGE_COST
         await db.commit()
         yield f"data: {json.dumps({'type': 'done', 'thread_id': thread_id, 'answer': answer})}\n\n"
@@ -240,14 +267,15 @@ async def continue_chat(
 
 
 @router.get("/chat/{thread_id}")
-async def get_chat_history(thread_id: str, 
-                           current_user = Depends(get_current_user),
+async def get_chat_history(thread_id: str,
+                           current_user: User | None = Depends(get_current_user_optional),
+                           guest_id: str | None = Depends(get_guest_id),
                            db: AsyncSession = Depends(get_session)):
     # verify user is owner of the thread
     result = await db.execute(
         select(Conversation).filter(
             Conversation.thread_id == thread_id,
-            Conversation.user_id == current_user.id
+            _owner_filter(current_user, guest_id)
         )
     )
     conversation = result.scalar_one_or_none()
@@ -277,11 +305,12 @@ async def get_chat_history(thread_id: str,
 
 @router.get("/conversations")
 async def list_user_conversations(
-    current_user = Depends(get_current_user),
+    current_user: User | None = Depends(get_current_user_optional),
+    guest_id: str | None = Depends(get_guest_id),
     db: AsyncSession = Depends(get_session)
 ):
     result = await db.execute(
-        select(Conversation).filter(Conversation.user_id == current_user.id).order_by(Conversation.created_at.desc())
+        select(Conversation).filter(_owner_filter(current_user, guest_id)).order_by(Conversation.created_at.desc())
     )
     conversations = result.scalars().all()
 
