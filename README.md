@@ -4,6 +4,11 @@ FastAPI + LangGraph service that parses a resume and a job description, compares
 
 Frontend: [`ai_resume_matcher_fed`](../ai_resume_matcher_fed).
 
+This backend also hosts the **Modax website AI chatbot** (`app/chatbot/`) — a separate feature
+unrelated to resume matching, sharing this repo for deployment convenience for now. See
+[`CHATBOT.md`](./CHATBOT.md) for its architecture, setup, and docs. Its frontend widget lives in
+the `modax` repo.
+
 ## Pipeline
 
 ```

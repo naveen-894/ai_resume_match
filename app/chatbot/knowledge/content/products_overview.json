@@ -1,0 +1,18 @@
+[
+  {
+    "id": "projects-overview",
+    "url": "https://modax.in/products",
+    "title": "AI Products | Screenr & Rawnn | Modax",
+    "section": "Projects",
+    "content_type": "product",
+    "text": "Modax's projects fall into two categories. First, custom AI tools built for clients — scoped to a specific team's workflow (document understanding, scoring & matching, AI assistants, workflow automation, or AI features added to an existing product), delivered in 2-3 weeks per the fixed-scope process described on the services page. Second, Modax's own AI products, which are projects Modax built and owns end-to-end: Screenr, an AI resume and job description matcher, and Rawnn, an AI-assisted commerce platform for fashion brands. Modax does not publish a public case-study archive of client projects; for examples of its work, Screenr and Rawnn are the two live, in-use projects visitors can explore directly."
+  },
+  {
+    "id": "products-overview",
+    "url": "https://modax.in/products",
+    "title": "AI Products | Screenr & Rawnn | Modax",
+    "section": "Overview",
+    "content_type": "product",
+    "text": "Beyond building custom AI tools for clients, Modax builds and owns two AI products itself: Screenr, an AI resume and job description matching tool, and Rawnn, an AI-assisted commerce platform for fashion brands. Both are purpose-built AI products developed, owned, and maintained by Modax to ensure reliability and continuous improvement, and both are proof that what Modax builds for clients is the same quality bar it holds itself to."
+  }
+]

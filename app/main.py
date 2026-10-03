@@ -3,10 +3,14 @@ import asyncio
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
+from slowapi.errors import RateLimitExceeded
+from slowapi import _rate_limit_exceeded_handler
 
 from app import auth_routes
 from app.util.db import Base, engine
 from app.resume_match import router as match_router
+from app.chatbot.routes import router as chatbot_router
+from app.chatbot.security import limiter as chatbot_limiter
 
 app = FastAPI(title="AI Resume Matcher")
 
@@ -19,9 +23,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ✅ Rate limiting (used by the chatbot routes; see app/chatbot/security.py)
+app.state.limiter = chatbot_limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 # ✅ Include routes
 app.include_router(match_router, prefix="/api")
 app.include_router(auth_routes.router, prefix="/api")
+app.include_router(chatbot_router, prefix="/api")
 
 # ✅ Environment variables for DB config
 DB_USER = os.getenv("DB_USER", "postgres")

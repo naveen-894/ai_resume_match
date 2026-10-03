@@ -1,0 +1,34 @@
+[
+  {
+    "id": "screenr-overview",
+    "url": "https://modax.in/products/ai-resume-matcher",
+    "title": "Screenr - AI Resume & Job Description Matching",
+    "section": "Overview",
+    "content_type": "product",
+    "text": "Screenr is Modax's lead product: an AI tool that instantly scores how well a candidate's resume fits a job. Upload a resume and a job description and in about 15 seconds get a clear 0-100% match score with a plain-English explanation of why — built for recruiters and hiring managers, and just as useful for job seekers checking their own resume before they apply. Screenr is built, owned, and maintained by Modax. Try it free at https://ai-resume-matcher-fed.vercel.app/ (no signup required for the first match)."
+  },
+  {
+    "id": "screenr-features",
+    "url": "https://modax.in/products/ai-resume-matcher",
+    "title": "Screenr Features",
+    "section": "Features",
+    "content_type": "product",
+    "text": "Screenr's core features: Smart Resume & JD Parsing (reads both documents like a person would — name, email, phone, skills, certifications, work history, education, job title, responsibilities, required experience); 0-100% Match Score with a Strong/Partial/Weak rating and plain-English reasoning plus key takeaways; Skills Gap Analysis showing which required skills are covered vs missing (e.g. 6 of 8 skills covered), recognizing skills phrased differently; Live Streaming Analysis showing each step in real time (reading resume, reading JD, comparing skills, scoring) via server-sent events so it's transparent, not a black box; Follow-up Chat to ask context-aware questions about a specific match (e.g. \"How much management experience do they have?\") with word-by-word streaming replies, scoped to that resume and role, and it refuses unrelated questions; Flexible Uploads (paste text, or upload PDF/DOCX/TXT, drag-and-drop supported); Match History (every match is saved with its full chat, revisit anytime); and the ability to try before signing up (one free match plus one round of follow-up questions, unlimited after sign-in)."
+  },
+  {
+    "id": "screenr-how-it-works",
+    "url": "https://modax.in/products/ai-resume-matcher",
+    "title": "How Screenr Works",
+    "section": "How It Works",
+    "content_type": "product",
+    "text": "How Screenr works, in 4 steps: 1) Add a resume and job description — paste text directly or upload a PDF, Word, or plain text file (drag-and-drop supported). 2) AI reads and parses both — the model extracts skills, experience, education and requirements from each document in parallel. 3) Compares skills and scores the match — required skills are checked against the candidate's background, producing a 0-100% score with reasoning. 4) Review and ask follow-ups — see the skills breakdown, read the explanation, and chat about specifics; every match is saved for later. The whole process takes about 15 seconds."
+  },
+  {
+    "id": "screenr-benefits",
+    "url": "https://modax.in/products/ai-resume-matcher",
+    "title": "Why Teams Choose Screenr",
+    "section": "Benefits",
+    "content_type": "product",
+    "text": "Why teams choose Screenr: screens candidates in seconds instead of hours; consistent, explainable scoring for every candidate measured the same way; built for recruiters, hiring managers, and job seekers alike; real AI understanding rather than keyword search, recognizing relevant experience phrased differently; lets users ask follow-up questions via a conversational assistant that already has the resume and role in context; keeps a full history of every match and conversation. Stats: about 15 seconds average time per match; a 0-100% explainable score; one free match before signup is required."
+  }
+]
