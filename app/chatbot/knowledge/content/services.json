@@ -1,0 +1,58 @@
+[
+  {
+    "id": "service-overview-summary",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions | Custom AI Tools for Business",
+    "section": "Overview",
+    "content_type": "service",
+    "text": "Modax offers five core services, all custom AI tools built around a team's actual workflow: (1) AI Document Understanding — extracting structured data from documents like resumes, invoices and contracts. (2) AI Scoring & Matching — explainable scores that compare candidates, leads or documents against criteria. (3) AI Assistants — chat assistants that answer questions from a company's own data and documents. (4) Workflow Automation with AI — automating follow-ups, reports, data entry and approvals. (5) AI Features in Your Product — adding LLM-powered features like search, summarization or drafting to an existing product. Every service is scoped around one goal: saving a team hours on manual work."
+  },
+  {
+    "id": "service-document-understanding",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions | Custom AI Tools for Business",
+    "section": "AI Document Understanding",
+    "content_type": "service",
+    "text": "AI Document Understanding: Modax trains AI to read documents and pull out exactly the fields a team needs, removing manual retyping of data from one system into another. Example use cases: HR parsing resumes into structured candidate profiles; Finance extracting line items from invoices and receipts; Legal/ops pulling key terms and dates out of contracts and forms. What you get: structured data output (JSON, spreadsheet, or your database); handles PDFs, scans, Word docs and images; built around your exact fields, not a generic template."
+  },
+  {
+    "id": "service-scoring-matching",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions",
+    "section": "AI Scoring & Matching",
+    "content_type": "service",
+    "text": "AI Scoring & Matching: Modax builds explainable scoring that compares something against your criteria and tells you why — not a black-box number. Example use cases: HR scoring how well a resume matches a job description; Sales ranking inbound leads against an ideal customer profile; Ops comparing vendor quotes or documents against a checklist. What you get: a 0-100% score with plain-English reasoning; criteria you control and can adjust; a tool your team will trust because it shows its work. Modax's own product Screenr is a real example of this service."
+  },
+  {
+    "id": "service-ai-assistants",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions",
+    "section": "AI Assistants",
+    "content_type": "service",
+    "text": "AI Assistants: chat assistants trained on your own documents and data, so your team or customers get answers without digging through files. Example use cases: HR assistant that answers policy questions from HR documents; Support assistant that answers customer FAQs from help docs; Internal assistant for company knowledge, onboarding, and SOPs. What you get: an assistant that only answers from your approved sources; deployed where your team already works; clear answers with the source it pulled from. This website's own AI assistant is an example of this exact service."
+  },
+  {
+    "id": "service-workflow-automation",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions",
+    "section": "Workflow Automation with AI",
+    "content_type": "service",
+    "text": "Workflow Automation with AI: Modax automates the repetitive steps around a process — follow-ups, reports, data entry, approvals — so a team only steps in where judgment is needed. Example use cases: HR automatic candidate status updates and interview reminders; Sales/ops automatic weekly reports pulled from existing systems; Finance automated data entry and approval routing. What you get: a defined workflow that runs on a schedule or trigger; humans kept in the loop at the decision points that matter; fewer dropped follow-ups and missed deadlines."
+  },
+  {
+    "id": "service-ai-features-in-product",
+    "url": "https://modax.in/services",
+    "title": "AI Solutions",
+    "section": "AI Features in Your Product",
+    "content_type": "service",
+    "text": "AI Features in Your Product: for teams that already have a product, Modax adds the LLM-powered feature users are asking for — search, summarization, drafting, or something custom. Example use cases: SaaS adding AI-powered search or summarization to an app; internal tools adding AI drafting or classification to existing dashboards; any product adding a chat layer on top of existing data. What you get: a feature integrated into your existing codebase; your choice of LLM provider, with your data staying in your infrastructure; ongoing tuning as usage grows."
+  },
+  {
+    "id": "service-process-summary",
+    "url": "https://modax.in/services",
+    "title": "How We Work",
+    "section": "Process",
+    "content_type": "process",
+    "text": "Modax's process for any custom AI engagement: a 15-minute discovery call, then a fixed-scope proposal with a clear price (no open-ended retainers), then a working AI tool delivered in 2-3 weeks, followed by ongoing support and improvements as needs change. Every tool is scoped around one goal: saving the team hours on work that should not need a human to do by hand."
+  }
+]
