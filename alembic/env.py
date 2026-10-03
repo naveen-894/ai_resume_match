@@ -6,6 +6,7 @@ from alembic import context
 
 from app.util.db import Base  # Import Base for target_metadata
 from app import models  # Ensure models are imported so Alembic can detect them
+from app.chatbot import models as chatbot_models  # noqa: F401 — registers chatbot tables
 
 # This is the Alembic Config object, which provides access
 # to the .ini file values.

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "company-overview",
+    "url": "https://modax.in/",
+    "title": "Modax | Custom AI Tools for HR Teams & Businesses",
+    "section": "Overview",
+    "content_type": "company_overview",
+    "text": "Modax is a founder-led AI studio based in Bangalore, India. Modax designs and builds custom AI tools for HR teams and growing businesses: screening resumes, reading documents, answering questions, and automating repetitive workflows. The company's focus is AI tools that do the manual work for a team, rather than generic AI features. Modax also builds and owns two AI products itself: Screenr (an AI resume and job description matcher) and Rawnn (an AI-assisted commerce platform for fashion brands)."
+  },
+  {
+    "id": "company-founder",
+    "url": "https://modax.in/about",
+    "title": "About Modax | A Founder-Led AI Studio",
+    "section": "Founder",
+    "content_type": "company_overview",
+    "text": "Modax is founder-led by Naveen V. Naveen founded Modax after years of building software for businesses and seeing the same pattern everywhere: teams buried in manual, repetitive work that software could already do. Modax exists to build the specific AI tool a team needs, ship it fast, and keep improving it after launch — not to sell a platform that half-fits. Naveen can be reached via LinkedIn: https://www.linkedin.com/in/naveen-v-89011421b/."
+  },
+  {
+    "id": "company-why-manual-work",
+    "url": "https://modax.in/about",
+    "title": "About Modax",
+    "section": "Mission",
+    "content_type": "company_overview",
+    "text": "Why Modax focuses on AI that removes manual work: most \"AI features\" are demos. Modax has seen HR teams drowning in resumes, ops teams retyping the same data between systems, and support teams answering the same questions over and over. That is the work Modax targets — not because it is flashy, but because it is where AI saves the most real hours. In practice, Modax builds custom AI tools for clients, and also builds and runs its own AI products — Screenr and Rawnn — so the company uses the same tools it sells. The approach is a fixed scope, a short build time, and a tool that is still running after the first demo."
+  },
+  {
+    "id": "company-values",
+    "url": "https://modax.in/about",
+    "title": "About Modax",
+    "section": "How We Build (Values)",
+    "content_type": "policy",
+    "text": "Modax's principles for every tool it ships: (1) Explainable, not black-box — every AI output comes with a reason, not just a number, so you can see why. (2) Humans stay in control — AI assists the decision, your team makes the call, every time. (3) Your data stays yours — your documents and data are never used to train AI models. (4) Shipped, not just demoed — real products in use today, not a prototype that stalls after the pitch."
+  },
+  {
+    "id": "company-why-modax-partner",
+    "url": "https://modax.in/",
+    "title": "Why Modax",
+    "section": "Why Modax",
+    "content_type": "company_overview",
+    "text": "Modax positions itself as a technology partner, not just a vendor, committed to long-term success through AI that holds up after launch, not just at the demo. The four reasons stated for choosing Modax are: explainable (not black-box) outputs, humans staying in control of decisions, customer data never being used to train models, and shipping real, working products rather than demos."
+  },
+  {
+    "id": "company-how-we-work-process",
+    "url": "https://modax.in/services",
+    "title": "How We Work",
+    "section": "Process",
+    "content_type": "process",
+    "text": "Modax's engagement process, from first call to a working tool: Step 1 — a 15-minute call: tell Modax what your team does manually today, and Modax will tell you honestly if AI can help. Step 2 — a fixed-scope proposal: a clear scope and price for exactly what will be built, with no open-ended retainers. Step 3 — a working AI tool in 2-3 weeks: Modax builds and ships something you can actually use, not a slide deck. Step 4 — ongoing support and improvements: Modax stays on to fix, tune, and extend the tool as your needs change. There are no setup fees for the initial call, and Modax responds within 24 hours."
+  },
+  {
+    "id": "company-contact-channels",
+    "url": "https://modax.in/contact",
+    "title": "Contact Modax",
+    "section": "Contact",
+    "content_type": "contact_info",
+    "text": "Ways to contact Modax: Email at vnaveen894@gmail.com for detailed responses to questions. Phone/call at +91 91645 79092 to speak directly with the team. WhatsApp at https://wa.me/919164579092 for quick responses. Modax is based in Bangalore, India, and responds within 24 hours. You can also book a 15-minute introductory call directly at https://calendly.com/vnaveen894/30min. The contact page also has a contact form where you can select whether your inquiry is about a custom AI tool or about the AI products (Screenr or Rawnn)."
+  },
+  {
+    "id": "company-social",
+    "url": "https://modax.in/",
+    "title": "Modax",
+    "section": "Social",
+    "content_type": "contact_info",
+    "text": "Modax's LinkedIn page: https://www.linkedin.com/in/naveen-v-89011421b/. Modax is designed and built in-house by Modax."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "faq-pricing",
+    "url": "https://modax.in/services",
+    "title": "Pricing",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: How much does a custom AI tool cost? Answer: Modax does not publish fixed prices for custom AI tools, because each tool is scoped to a specific workflow. After an initial 15-minute call, Modax sends a fixed-scope proposal with a clear price for exactly what will be built — there are no open-ended retainers. There are no setup fees for the initial call itself."
+  },
+  {
+    "id": "faq-timeline",
+    "url": "https://modax.in/services",
+    "title": "Timeline",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: How long does it take to build a custom AI tool? Answer: Based on Modax's stated process, a working AI tool is typically delivered in 2-3 weeks after the scope is agreed, followed by ongoing support and improvements as needs change."
+  },
+  {
+    "id": "faq-getting-started",
+    "url": "https://modax.in/services",
+    "title": "Getting Started",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: How do I start a project with Modax? Answer: Start with a free 15-minute call (bookable at https://calendly.com/vnaveen894/30min) to describe what your team does manually today. Modax will tell you honestly whether AI can help, then follow up with a fixed-scope proposal. You can also reach out via the contact form, email (vnaveen894@gmail.com), or WhatsApp (https://wa.me/919164579092)."
+  },
+  {
+    "id": "faq-free-trial",
+    "url": "https://modax.in/products/ai-resume-matcher",
+    "title": "Free Trial",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: Can I try Modax's products for free? Answer: Yes. Screenr, Modax's AI resume matcher, offers one free match plus a round of follow-up chat with no sign-up required, at https://ai-resume-matcher-fed.vercel.app/. It becomes unlimited after signing in."
+  },
+  {
+    "id": "faq-data-privacy",
+    "url": "https://modax.in/about",
+    "title": "Data Privacy",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: Will Modax use our data to train AI models? Answer: No. Modax states as a core value that your documents and data are never used to train AI models, and that your data stays yours."
+  },
+  {
+    "id": "faq-industries",
+    "url": "https://modax.in/",
+    "title": "Who Modax Works With",
+    "section": "FAQ",
+    "content_type": "faq",
+    "text": "Question: Who does Modax build AI tools for? Answer: Modax primarily serves HR teams and recruitment agencies (its starting focus) and growing businesses more broadly across functions like sales, ops, finance, and legal — anywhere there is repetitive manual work such as document processing, scoring/matching, Q&A, or workflow automation. Modax also sells two of its own AI products directly: Screenr (hiring/recruitment) and Rawnn (fashion e-commerce/D2C brands)."
+  }
+]

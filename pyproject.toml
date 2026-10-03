@@ -11,12 +11,14 @@ dependencies = [
     "boto3>=1.43.103",
     "email-validator>=2.3.0",
     "fastapi>=0.120.2",
+    "httpx>=0.27.0",
     "langchain>=1.0.3",
     "langchain-openai>=1.0.1",
     "langgraph>=1.0.2",
     "langgraph-checkpoint-postgres>=3.0.0",
     "langgraph-checkpoint-sqlite>=3.0.0",
     "passlib[bcrypt]>=1.7.4",
+    "pinecone>=5.0.0",
     "psycopg2-binary>=2.9.11",
     "psycopg[binary]>=3.2.12",
     "pypdf2>=3.0.1",
@@ -32,3 +34,13 @@ dependencies = [
 [tool.uv]
 # textract pins six==1.12.0, whose six.moves doesn't import on Python 3.12+ (needed by botocore)
 override-dependencies = ["six>=1.16"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

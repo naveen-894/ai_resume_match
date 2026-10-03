@@ -1,0 +1,34 @@
+[
+  {
+    "id": "rawnn-overview",
+    "url": "https://modax.in/products/rawnn",
+    "title": "Rawnn - Complete E-commerce Platform for Fashion Brands",
+    "section": "Overview",
+    "content_type": "product",
+    "text": "Rawnn is Modax's AI-assisted commerce platform for fashion brands: a two-sided platform with an AI-assisted retailer dashboard that drafts product titles, descriptions and sizes, paired with a location-aware customer app that surfaces nearby stores to shoppers. It is built and owned by Modax, built for D2C (direct-to-consumer) fashion brands wanting to launch an online store without a developer."
+  },
+  {
+    "id": "rawnn-features",
+    "url": "https://modax.in/products/rawnn",
+    "title": "Rawnn Features",
+    "section": "Features",
+    "content_type": "product",
+    "text": "Rawnn's core features: AI-Powered Product Listings (upload a product photo and AI drafts the title, description, specs and sizes for review, no copywriting required; manual entry also supported); Flexible Inventory, Delivery & Pickup (per-size stock variants, delivery and in-store pickup toggles controlled per product, backed by an 8-stage approval pipeline: New to Under Review to Approved to Published); Returns & Exchanges (configurable per product, customer-initiated requests, retailer-side approval); Razorpay Payments & Settlements (integrated Razorpay checkout for customers plus a retailer settlement dashboard, coupon/discount support, order status tracking); Ratings & Reviews (star ratings with a moderated review pipeline); In-App Customer Chat (direct messaging between customers and retailers, with the ability to tag a specific product, one chat session per customer-retailer pair); Location-Based Discovery (Google Maps-powered location search surfacing nearby retailers and products first, address autofill at checkout, a dedicated store page per retailer); and Phone & OTP Login (passwordless sign-in for both retailers and shoppers via a 10-digit phone number and 4-digit OTP, JWT-based sessions)."
+  },
+  {
+    "id": "rawnn-how-it-works",
+    "url": "https://modax.in/products/rawnn",
+    "title": "How Rawnn Works",
+    "section": "How It Works",
+    "content_type": "product",
+    "text": "How Rawnn works, in 4 steps: 1) Sign up with your phone — enter your number and verify with a 4-digit OTP, no passwords or lengthy onboarding forms. 2) Snap a photo, let AI list it — pick a category and upload a product photo; AI drafts the title, description, specs and sizes for review and adjustment. 3) Get approved and go live — the listing moves through the approval pipeline, then publishes to shoppers browsing nearby in the customer app. 4) Sell, chat & get paid — manage orders and returns, chat with customers about specific products, and track payouts through Razorpay, all from one dashboard."
+  },
+  {
+    "id": "rawnn-benefits",
+    "url": "https://modax.in/products/rawnn",
+    "title": "Why Fashion Brands Choose Rawnn",
+    "section": "Benefits",
+    "content_type": "product",
+    "text": "Why fashion brands choose Rawnn: launch without a developer (AI drafts the listing from a single photo, review and publish); get discovered locally through the location-aware customer app without needing to run ads; a quality-controlled catalog since every listing passes an approval pipeline before going live; payments and payouts handled end-to-end through Razorpay; conversations kept on-platform via built-in chat tagging specific products; and a mobile-first, passwordless experience via phone + OTP login across both the retailer and shopper apps. Platform highlights: AI drafts listings from one photo; two connected apps (retailer dashboard + customer app); an 8-stage product approval pipeline."
+  }
+]
